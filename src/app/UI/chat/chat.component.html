@@ -1,0 +1,154 @@
+<section class="msger">
+  <header class="msger-header">
+      <div class="msger-header-title"><i class="fa-solid fa-comment-dots"></i> &nbsp;ChatGPT</div>
+      <div class="msger-header-options">
+          <!-- <span> +</span> -->
+      </div>
+  </header>
+
+  <main class="msger-chat">
+
+      <span *ngIf="hideapp">
+        <app-first-page (newEvent)="OnDisplay($event)" ></app-first-page></span>
+
+        <!-- <div *ngFor="let item of data">
+          <div *ngIf="!hideapp">
+            <style>
+              .angry-grid {
+                 display: grid;
+
+                 grid-template-rows: 1fr 1fr 1fr;
+                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+                 gap: 0px;
+                 height: 100%;
+
+              }
+
+              #item-0 {
+
+                 background-color: #B987CB;
+                 grid-row-start: 1;
+                 grid-column-start: 1;
+
+                 grid-row-end: 3;
+                 grid-column-end: 2;
+
+              }
+              #item-1 {
+
+                 background-color: #5F5A55;
+                 grid-row-start: 1;
+                 grid-column-start: 2;
+
+                 grid-row-end: 2;
+                 grid-column-end: 8;
+
+              }
+              #item-2 {
+
+                 background-color: #E57CBB;
+                 grid-row-start: 2;
+                 grid-column-start: 2;
+
+                 grid-row-end: 3;
+                 grid-column-end: 8;
+
+              }
+              </style>
+
+              <div class="angry-grid">
+                <div id="item-0">&nbsp;</div>
+                <div id="item-1">&nbsp;</div>
+                <div id="item-2">&nbsp;</div>
+              </div>
+
+
+          </div>
+        </div> -->
+
+        <div *ngFor="let item of data">
+          <div *ngIf="!hideapp">
+            <div class="row">
+              <div class="msg left-msg">
+                <div class="msg-img"><i class="fa-solid fa-user"></i> </div>
+                <div classs="msg-bubble">
+                    <div class="msg-text">
+                        YOU
+                    </div>
+                    <div class="msg-query">
+                      <p>{{ item.ques}}</p>
+                  </div>
+                </div>
+            </div>
+
+
+            </div>
+
+            <div class="row-bot">
+              <div class="msg left-msg">
+                  <div class="msg-img"><i class="fa-solid fa-robot"></i></div>
+                  <div class="msg-bubble">
+                      <div class="msg-text">
+                          LPL ChatBot
+                      </div>
+                      <div class="msg-query">
+                        <p>{{ item.ans }}</p>
+                    </div>
+                  </div>
+              </div>
+
+            </div>
+
+
+          </div>
+      </div>
+
+<!--
+      <div *ngFor="let item of data">
+          <div *ngIf="!hideapp">
+              <div class="msg left-msg">
+                  <div class="msg-img"><i class="fa-solid fa-user"></i> </div>
+                  <div classs="msg-bubble">
+                      <div class="msg-text">
+                          YOU
+                      </div>
+                  </div>
+              </div>
+
+              <div class="question">
+                  <p>{{ item.ques}}</p>
+              </div>
+              <div class="msg left-msg">
+                  <div class="msg-img"><i class="fa-solid fa-robot"></i></div>
+                  <div class="msg-bubble">
+                      <div class="msg-text">
+                          LPL ChatGPT
+                      </div>
+                  </div>
+              </div>
+
+              <div>
+
+                      <div class="snippet" data-title="dot-pulse" style="padding-left: 58px;" *ngIf="loaderVisible">
+                        <div class="stage">
+                          <div class="dot-pulse"></div>
+                        </div>
+                      </div>
+
+                  <p>Hi, I need help with financial services to save my earnings. {{item.ans }}</p>
+              </div>
+
+          </div>
+      </div> -->
+
+
+
+  </main>
+
+  <form class="msger-inputarea">
+      <input [(ngModel)]="userInputMsg" name="message" type="text" class="msger-input"
+          placeholder="Enter your message..." />
+      <button type="submit" class="msger-send-btn" (click)="send()"><i class="fa-solid fa-paper-plane"></i></button>
+  </form>
+</section>
